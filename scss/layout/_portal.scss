@@ -1,0 +1,183 @@
+.portal{
+    &__wrapper{
+        min-height: 100vh;
+        display: flex;
+
+        &__form{
+            display: grid;
+            place-items: center;
+            width: 100%;
+            background: #fff;
+            border-radius: 0 100px 0 0;
+            padding: 50px 20px 0;
+
+            &__wrapper{
+                max-width: 400px;
+
+                &__title{
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    h1{
+                    font-size: clamp(2rem, 1.375rem + 2vw, 2.5rem);
+                    margin-left: 10px;
+                        span{
+                            color: #9F1015;;
+                        }
+                    }
+
+                    p{  
+                        margin-left: 10px;
+                        color: #808080;
+                        font-size: clamp(0.9rem, 0.775rem + 0.4vw, 1rem);
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 100%;
+                        background: #9F1015;
+                        left: 0;
+                    }
+                }
+
+                &__field{
+                    display: grid;
+                    gap: .5rem;
+
+                    &__input{
+                        position: relative;
+
+                        input{
+                            width: 100%;
+                            background: #eeeeee;
+                            border-radius: 5px;
+                            padding: 25px 15px 10px;
+                            transition: .3s ease-in-out;
+
+                            &:focus{
+                                outline: 2px solid #9F1015;
+                            }
+
+                            &:focus ~ label{
+                                color: #9F1015;
+                            }
+                        }
+
+                        label{
+                            position: absolute;
+                            left: 15px;
+                            top: 17.5px ;
+                            color: #808080;
+                            transition: .3s ease-in-out;
+                        }
+
+                        img{
+                            position: absolute;
+                            right: 15px;
+                        }
+
+                        #show-hide-pass{
+                            width: 18px;
+                            top: 21px;
+                            cursor: pointer;
+                        }
+
+                        #captcha-img{
+                            top: 14px;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: .3s ease-in-out;
+                        }
+
+                        #forgot-pass{
+                            float: right;
+                            color: #9F1015;
+                            font-size: .9rem;
+                            margin: 3px 0 7px;
+                        }
+
+
+                        &.focus label{
+                            font-size: .8rem;
+                            top: 5px;
+                        }
+
+                        &.focus #captcha-img{
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &__button{
+                        margin-top: 20px;
+                        button{
+                            width: 100%;
+                            background: #9F1015;
+                            padding: 15px;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+
+                    #terms{
+                        font-size: .9rem;
+
+                        a{
+                            color: #9F1015;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__hero{
+            display: grid;
+            place-items: center;
+            width: 100%;
+            background: url(../assets/ucc_bg.jpg) no-repeat;
+            background-size: cover;
+            border-radius: 0 0 0 100px;
+            position: relative;
+            
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background: #9F1015;
+                top: 0;
+                left: -100px;
+                z-index: -1;
+            }
+
+            img{
+                max-width: 350px;
+            }
+
+        }
+
+        @media only screen and (max-width:1024px) {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            &__form{
+                border-radius: 50px 0 0 0;
+            }
+
+            &__hero{
+                padding: 20px;
+                border-radius: 0 0 50px 0;
+                img{
+                    max-width: 100px;
+                }
+
+                &::before{
+                    left: 0;
+                    top: 125px;
+                }
+            }
+        }
+    }
+}

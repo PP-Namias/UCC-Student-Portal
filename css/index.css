@@ -1,0 +1,221 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2 {
+  line-height: 1.1;
+}
+
+input, button {
+  border: none;
+  outline: 2px solid transparent;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.portal__wrapper {
+  min-height: 100vh;
+  display: flex;
+}
+.portal__wrapper__form {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: #fff;
+  border-radius: 0 100px 0 0;
+  padding: 50px 20px 0;
+}
+.portal__wrapper__form__wrapper {
+  max-width: 400px;
+}
+.portal__wrapper__form__wrapper__title {
+  position: relative;
+  margin-bottom: 20px;
+}
+.portal__wrapper__form__wrapper__title h1 {
+  font-size: clamp(2rem, 1.375rem + 2vw, 2.5rem);
+  margin-left: 10px;
+}
+.portal__wrapper__form__wrapper__title h1 span {
+  color: #ff5e00;
+}
+.portal__wrapper__form__wrapper__title p {
+  margin-left: 10px;
+  color: #808080;
+  font-size: clamp(0.9rem, 0.775rem + 0.4vw, 1rem);
+}
+.portal__wrapper__form__wrapper__title::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #ff5e00;
+  left: 0;
+}
+.portal__wrapper__form__wrapper__field {
+  display: grid;
+  gap: 0.5rem;
+}
+.portal__wrapper__form__wrapper__field__input {
+  position: relative;
+}
+.portal__wrapper__form__wrapper__field__input input {
+  width: 100%;
+  background: #eeeeee;
+  border-radius: 5px;
+  padding: 25px 15px 10px;
+  transition: 0.3s ease-in-out;
+}
+.portal__wrapper__form__wrapper__field__input input:focus {
+  outline: 2px solid #ff5e00;
+}
+.portal__wrapper__form__wrapper__field__input input:focus ~ label {
+  color: #ff5e00;
+}
+.portal__wrapper__form__wrapper__field__input label {
+  position: absolute;
+  left: 15px;
+  top: 17.5px;
+  color: #808080;
+  transition: 0.3s ease-in-out;
+}
+.portal__wrapper__form__wrapper__field__input img {
+  position: absolute;
+  right: 15px;
+}
+.portal__wrapper__form__wrapper__field__input #show-hide-pass {
+  width: 18px;
+  top: 21px;
+  cursor: pointer;
+}
+.portal__wrapper__form__wrapper__field__input #captcha-img {
+  top: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+.portal__wrapper__form__wrapper__field__input #forgot-pass {
+  float: right;
+  color: #ff5e00;
+  font-size: 0.9rem;
+  margin: 3px 0 7px;
+}
+.portal__wrapper__form__wrapper__field__input.focus label {
+  font-size: 0.8rem;
+  top: 5px;
+}
+.portal__wrapper__form__wrapper__field__input.focus #captcha-img {
+  visibility: visible;
+  opacity: 1;
+}
+.portal__wrapper__form__wrapper__field__button {
+  margin-top: 20px;
+}
+.portal__wrapper__form__wrapper__field__button button {
+  width: 100%;
+  background: #ff5e00;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.portal__wrapper__form__wrapper__field #terms {
+  font-size: 0.9rem;
+}
+.portal__wrapper__form__wrapper__field #terms a {
+  color: #ff5e00;
+}
+.portal__wrapper__hero {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: url(../assets/ucc_bg.jpg) no-repeat;
+  background-size: cover;
+  border-radius: 0 0 0 100px;
+  position: relative;
+}
+.portal__wrapper__hero::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #ff5e00;
+  top: 0;
+  left: -100px;
+  z-index: -1;
+}
+.portal__wrapper__hero img {
+  max-width: 350px;
+}
+@media only screen and (max-width: 1024px) {
+  .portal__wrapper {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .portal__wrapper__form {
+    border-radius: 50px 0 0 0;
+  }
+  .portal__wrapper__hero {
+    padding: 20px;
+    border-radius: 0 0 50px 0;
+  }
+  .portal__wrapper__hero img {
+    max-width: 100px;
+  }
+  .portal__wrapper__hero::before {
+    left: 0;
+    top: 125px;
+  }
+}/*# sourceMappingURL=index.css.map */
